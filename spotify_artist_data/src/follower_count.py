@@ -12,11 +12,11 @@ def follower_count(artist_name):
 
     results = sp.search(q=artist_name, type='artist', limit=1)
 
-    if results['artists']['items']:
+    if results['artists']['items'][0]['name'] == artist_name:
         artist = results['artists']['items'][0]
         return {"artist": f"{artist['name']}", "followers": artist['followers']['total']}
     else:
-        return "Artist not found."
+        return "Error, artist not found"
 
 def main():
     print(follower_count())
