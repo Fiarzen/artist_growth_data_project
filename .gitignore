@@ -5,3 +5,4 @@ spotify_credentials.json
 __pycache__/
 **/__pycache__/
 .cache
+**/venv

@@ -14,7 +14,7 @@ def follower_count(artist_name):
 
     if results['artists']['items']:
         artist = results['artists']['items'][0]
-        return f"Artist: {artist['name']}, Followers: {artist['followers']['total']}"
+        return {"artist": f"{artist['name']}", "followers": artist['followers']['total']}
     else:
         return "Artist not found."
 
