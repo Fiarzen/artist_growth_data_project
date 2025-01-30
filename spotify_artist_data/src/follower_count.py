@@ -1,6 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import json
+from datetime import datetime
 
 def follower_count(artist_name):
     with open('spotify_credentials.json', 'r') as file:

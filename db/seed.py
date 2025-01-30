@@ -1,4 +1,4 @@
-from src.db.connection import connect_to_test_db
+from db.connection import connect_to_test_db
 
 
 def seed_db():
@@ -6,11 +6,11 @@ def seed_db():
     db.run('DROP TABLE if exists artist_follower_count')
 
     db.run(
-        'CREATE TABLE fact_sales_order (\
+        'CREATE TABLE artist_follower_count (\
         artist_id SERIAL PRIMARY KEY,\
-        artist_name STRING, \
+        artist_name TEXT, \
         follower_count INT NOT NULL, \
-        recorded_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, \
+        recorded_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP \
         )'
     )
 
