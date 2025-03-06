@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 def follower_count(artist_name):
-    with open('spotify_credentials.json', 'r') as file:
+    with open('src/spotify_artist_data/spotify_credentials.json', 'r') as file:
         credentials = json.load(file)
     client_id = credentials['client_id']
     client_secret = credentials['client_secret'] 
@@ -20,7 +20,8 @@ def follower_count(artist_name):
         return "Error, artist not found"
 
 def main():
-    print(follower_count())
+    artist = input("enter an artist name").strip()
+    print(follower_count(artist))
 
 if __name__ == "__main__":
     main()
